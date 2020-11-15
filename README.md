@@ -2,4 +2,5 @@
 
 #it's hard to spot errors quickly without frameworks, it's hard!!
 #Anyways, here's my try!
-##Not Done!!!!
+##I can't seem to be able to finish it, I'm not a home and here there's been power outage happening too often😢
+##It's Not Done!!!! But surely I can crush it, more than it if I had all I need.
