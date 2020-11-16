@@ -31,6 +31,7 @@
       
     </main>
 
+    <!-- <div id="app"></div> -->
 </body>
 <script>
 let myData = {
@@ -388,7 +389,7 @@ let myData = {
       "repositories": {
         "totalCount": 16
       },
-      "avatarUrl": "https://avatars1.githubusercontent.com/u/35657456?&u=1e43daa5c8330a26e565494dd97edf517ccc171a&v=4",
+      "avatarUrl": "https://avatars1.githubusercontent.com/u/35657456?s=10&u=1e43daa5c8330a26e565494dd97edf517ccc171a&v=4",
       "name": "Ahmad Yusuf"
     }
   }
@@ -422,20 +423,11 @@ let renderRepos = function(template, selector, data){
     node.innerHTML += myTemp;
   });
 }
-let renderMain = function (selector, data) {  
+  let renderMain = function (selector, data) {
   let node = document.querySelector(selector);
   if(!node) return;
   let myTemp = `
-  <div class="profile">
-            <div class="avartar">
-              <img src="${data.data.user.avatarUrl}" class="avartar-image">
-            </div>
-            <div class="">
-                <h1>${data.data.user.name}</h1>
-                <h4 class="username">${data.data.viewer.login}</h4>
-                <p class="desc lg-up-only">${data.data.viewer.bio}</p>
-            </div>
-        </div>
+        
         <div class="tabs">
             <ul class="tab-list">
                 <li><i class="fa fa-book-open lg-up-only"></i> Overview</li>
@@ -443,14 +435,25 @@ let renderMain = function (selector, data) {
                 <li><i class="fa fa-project-diagram"></i> Projects<span class="badge">${data.data.user.projects.totalCount}</span></li>
                 <li><i class="fa fa-box"></i> Packages</li>
             </ul>
-
-            <div class="infos">
-                <div class="repos-list" id="app">
-                    <input type="text" placeholder="Find a repository..." class="repo-search">
-                    
-                </div>
-            </div>
         </div>
+        <div class="wrap">
+          <div class="profile">
+              <div class="avartar">
+                <img src="${data.data.user.avatarUrl}">
+              </div>
+              <div class="">
+                  <h1>${data.data.user.name}</h1>
+                  <h4 class="username">${data.data.viewer.login}</h4>
+                  <p class="desc lg-up-only">${data.data.viewer.bio}</p>
+              </div>
+          </div>
+              <div class="infos">
+                  <div class="repos-list" id="app">
+                      <input type="text" placeholder="Find a repository..." class="repo-search">
+                      
+                  </div>
+              </div>
+          </div>
         `;
         node.innerHTML = myTemp
         renderRepos('myTemp', '#app', myData.data.viewer.repositories.edges);
